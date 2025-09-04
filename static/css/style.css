@@ -2199,3 +2199,58 @@ body {
     padding-left: 65px;
   }
 }
+
+/* Side Navbar container */
+.sidenav {
+  height: 100%;
+  width: 0;
+  /* يبدأ مقفول */
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  /* لون الخلفية */
+  overflow-x: hidden;
+  transition: 0.4s ease;
+  /* حركة فتح وغلق ناعمة */
+  padding-top: 60px;
+  z-index: 1000;
+}
+
+/* Links inside navbar */
+.sidenav a {
+  padding: 12px 24px;
+  text-decoration: none;
+  font-size: 18px;
+  color: #f1f1f1;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  background: #333;
+  border-radius: 6px;
+}
+
+/* Overlay خلف القائمة */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: none;
+  /* بيظهر بس لما القائمة مفتوحة */
+  z-index: 900;
+}
+
+/* لما القائمة تتفتح */
+.sidenav.open {
+  width: 70%;
+  /* متاخدش كل الشاشة */
+}
+
+.overlay.show {
+  display: block;
+}
