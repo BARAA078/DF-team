@@ -54,27 +54,6 @@
     }
   </style>
 </head>
-<script src="static/js/auth.js"></script>
-<script>
-  // عرض بيانات المستخدم في الصفحة الرئيسية
-  document.addEventListener('DOMContentLoaded', function () {
-    const userData = getUserData();
-
-    if (userData) {
-      // إضافة اسم المستخدم في واجهة المستخدم
-      const userGreeting = document.createElement('div');
-      userGreeting.className = 'user-greeting';
-      userGreeting.innerHTML = `
-        <button id="logoutBtn" class="btn btn-sm btn-outline">تسجيل الخروج</button>
-      `;
-
-      document.querySelector('.header-right').prepend(userGreeting);
-
-      // إضافة حدث تسجيل الخروج
-      document.getElementById('logoutBtn').addEventListener('click', logout);
-    }
-  });
-</script>
 
 <body>
   <!-- Fixed header logo -->
@@ -106,7 +85,6 @@
       <a href="resources.html"><i class="fas fa-book"></i> الموارد</a>
       <a href="faq.html"><i class="fas fa-question"></i> الأسئلة الشائعة</a>
       <a href="contact.html"><i class="fas fa-envelope"></i> تواصل معنا</a>
-      <a href="apply.html"><i class="fas fa-user-plus"></i> طلب الانضمام</a>
     </nav>
     <div class="side-nav-footer">
       <div class="side-social">
@@ -128,7 +106,7 @@
       <span class="brand-name">DF Team</span>
     </div>
     <div class="header-center">
-      <span class="welcome-message">مرحباً بكم أعضاء وقائد فريق الأنامل الرقمية</span>
+      <span class="welcome-message">مرحباً بكم في فريق الأنامل الرقمية</span>
     </div>
     <div class="header-right">
       <a href="#" class="header-link header-menu-btn" id="menuBtn"><i class="fas fa-bars"></i></a>
@@ -281,7 +259,6 @@
           <li><a href="members.html">الأعضاء</a></li>
           <li><a href="trainings.html">التدريبات</a></li>
           <li><a href="projects.html">المشاريع</a></li>
-          <li><a href="apply.html">طلب الانضمام</a></li>
         </ul>
       </div>
       <div class="footer-col">
