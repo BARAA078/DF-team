@@ -191,3 +191,88 @@ if ('IntersectionObserver' in window) {
     const lazyImages = document.querySelectorAll('img[data-src]');
     lazyImages.forEach(img => imageObserver.observe(img));
 }
+ // تحسينات للقائمة الجانبية على الهواتف
+    document.addEventListener('DOMContentLoaded', function () {
+      const sideNav = document.getElementById('sideNav');
+      const closeNav = document.getElementById('closeNav');
+      const menuBtn = document.getElementById('menuBtn');
+      const navOverlay = document.getElementById('navOverlay');
+
+      // فتح القائمة الجانبية
+      function openSideNav() {
+        if (sideNav) {
+          sideNav.classList.add('open');
+        }
+        if (navOverlay) {
+          navOverlay.classList.add('open');
+        }
+        // منع التمرير في الخلفية
+        document.body.classList.add('no-scroll');
+      }
+
+      // إغلاق القائمة الجانبية
+      function closeSideNav() {
+        if (sideNav) {
+          sideNav.classList.remove('open');
+        }
+        if (navOverlay) {
+          navOverlay.classList.remove('open');
+        }
+        // إعادة تفعيل التمرير
+        document.body.classList.remove('no-scroll');
+      }
+
+      // إضافة مستمع الأحداث لزر الإغلاق
+      if (closeNav) {
+        closeNav.addEventListener('click', closeSideNav);
+      }
+
+      // إضافة مستمع الأحداث لزر القائمة
+      if (menuBtn) {
+        menuBtn.addEventListener('click', function (e) {
+          e.preventDefault();
+          e.stopPropagation();
+          openSideNav();
+        });
+      }
+
+      // إضافة مستمع الأحداث للخلفية المظللة
+      if (navOverlay) {
+        navOverlay.addEventListener('click', closeSideNav);
+      }
+
+      // إغلاق القائمة عند الضغط على مفتاح Escape
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') {
+          closeSideNav();
+        }
+      });
+
+      // منع إغلاق القائمة عند النقر عليها
+      if (sideNav) {
+        sideNav.addEventListener('click', function (e) {
+          e.stopPropagation();
+        });
+      }
+
+      // إغلاق القائمة تلقائيًا عند تغيير حجم النافذة إلى حجم كبير
+      window.addEventListener('resize', function () {
+        if (window.innerWidth > 768) {
+          closeSideNav();
+        }
+      });
+
+      // إضافة تأثيرات للروابط عند التحويم
+      const navLinks = document.querySelectorAll('.side-nav-links a');
+      navLinks.forEach(link => {
+        link.addEventListener('touchstart', function () {
+          this.classList.add('hover-effect');
+        });
+
+        link.addEventListener('touchend', function () {
+          setTimeout(() => {
+            this.classList.remove('hover-effect');
+          }, 150);
+        });
+      });
+    });
