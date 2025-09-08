@@ -665,21 +665,17 @@ body {
   border: 2px solid var(--primary-color);
   color: var(--primary-color);
   background: transparent;
-}
-
-.btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 25px rgba(31, 208, 255, 0.4);
+  background: rgba(31, 208, 255, 0.1);
+  color: var(--text-light);
+    transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(185, 7, 221, 0.4);
 }
 
 .btn-primary:hover {
     box-shadow: 0 4px 15px rgb(255, 244, 255);
 }
 
-.btn-outline:hover {
-  background: rgba(31, 208, 255, 0.1);
-  color: var(--text-light);
-}
+
 
 .btn-block {
   display: block;
@@ -857,20 +853,17 @@ body {
   font-weight: 600;
   letter-spacing: 0.5px;
   transition: all 0.3s ease;
-}
-
-.leader-card:hover {
   transform: translateY(-8px);
   box-shadow: 0 15px 40px rgba(31, 208, 255, 0.25);
   border-color: rgba(31, 208, 255, 0.4);
 }
 
-.leader-card:hover .leader-info h3 {
+.leader-card .leader-info h3 {
   color: var(--primary);
   text-shadow: 0 0 10px rgba(31, 208, 255, 0.3);
 }
 
-.leader-card:hover .leader-role {
+.leader-card .leader-role {
   background: rgba(31, 208, 255, 0.3);
   transform: scale(1.05);
 }
@@ -881,13 +874,12 @@ body {
   position: relative;
   z-index: 2;
   transition: all 0.3s ease;
-}
-
-.leader-card:hover .btn {
-  background: var(--primary);
+    background: var(--primary);
   color: var(--dark-1);
   box-shadow: 0 0 20px rgba(31, 208, 255, 0.5);
 }
+
+
 
 /* ===== SERVICES SECTION ===== */
 .services-section {
