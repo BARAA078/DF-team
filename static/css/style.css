@@ -846,7 +846,6 @@ body {
 .leader-role {
   display: inline-block;
   background: rgba(31, 208, 255, 0.2);
-  color: var(--primary);
   padding: 0.5rem 1.2rem;
   border-radius: 20px;
   font-size: 0.9rem;
